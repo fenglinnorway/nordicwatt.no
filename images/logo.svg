@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 50" aria-label="NordicWatt">
+  <!-- Hexagon (pointy-top, dark fill with subtle border) -->
+  <polygon points="23,1 42,12 42,34 23,45 4,34 4,12"
+           fill="#0d2e27" stroke="#2d7a5e" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Lightning bolt (cyan) -->
+  <path d="M26.5,8 L15,26 L22,26 L19,41 L33,21 L26,21 Z" fill="#00D4FF"/>
+  <!-- "Nordic" in white -->
+  <text x="52" y="32"
+        font-family="Inter,'Helvetica Neue',Arial,sans-serif"
+        font-size="23" font-weight="800" fill="white" letter-spacing="-0.5">Nordic</text>
+  <!-- "Watt" in lime green -->
+  <text x="148" y="32"
+        font-family="Inter,'Helvetica Neue',Arial,sans-serif"
+        font-size="23" font-weight="800" fill="#5EE87A" letter-spacing="-0.5">Watt</text>
+</svg>
