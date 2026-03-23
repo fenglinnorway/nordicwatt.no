@@ -145,7 +145,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 const PRODUCTS = {
   'W-12-100': {
     title: 'W-12-100 | 12.8V 100Ah LiFePO4 Battery',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/08/100-5.jpg',
+    image: 'images/100-5.jpg',
     specs: [
       ['Model', 'W-12-100'],
       ['Nominal Capacity', '100Ah / 1280Wh'],
@@ -174,7 +174,7 @@ const PRODUCTS = {
   },
   'W-12-100mini': {
     title: 'W-12-100 Mini | 12.8V 100Ah Compact LiFePO4 Battery',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/08/100-5-1.jpg',
+    image: 'images/100-5-1.jpg',
     specs: [
       ['Model', 'W-12-100 Mini'],
       ['Nominal Capacity', '100Ah / 1280Wh'],
@@ -203,7 +203,7 @@ const PRODUCTS = {
   },
   'W-12-105H': {
     title: 'W-12-105H | 12.8V 105Ah LiFePO4 Battery with Heater',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/07/105-2.jpg',
+    image: 'images/105-2.jpg',
     specs: [
       ['Model', 'W-12-105H'],
       ['Nominal Capacity', '105Ah / 1344Wh'],
@@ -232,7 +232,7 @@ const PRODUCTS = {
   },
   'W-12-150H': {
     title: 'W-12-150H | 12.8V 150Ah LiFePO4 Battery with Heater',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2026/03/3.jpg',
+    image: 'images/3.jpg',
     specs: [
       ['Model', 'W-12-150H'],
       ['Nominal Capacity', '150Ah / 1920Wh'],
@@ -261,7 +261,7 @@ const PRODUCTS = {
   },
   'W-12-175H': {
     title: 'W-12-175H | 12.8V 175Ah LiFePO4 Battery with Heater',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/07/1.jpg',
+    image: 'images/1.jpg',
     specs: [
       ['Model', 'W-12-175H'],
       ['Nominal Capacity', '175Ah / 2240Wh'],
@@ -290,7 +290,7 @@ const PRODUCTS = {
   },
   'W-12-200H': {
     title: 'W-12-200H | 12.8V 200Ah LiFePO4 Battery with Heater',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/08/200-1-scaled.jpg',
+    image: 'images/200-1-scaled.jpg',
     specs: [
       ['Model', 'W-12-200H'],
       ['Nominal Capacity', '200Ah / 2560Wh'],
@@ -319,7 +319,7 @@ const PRODUCTS = {
   },
   'W-12-300': {
     title: 'W-12-300 | 12.8V 300Ah LiFePO4 Battery',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/08/300-1-scaled.jpg',
+    image: 'images/300-1-scaled.jpg',
     specs: [
       ['Model', 'W-12-300'],
       ['Nominal Capacity', '300Ah / 3840Wh'],
@@ -348,7 +348,7 @@ const PRODUCTS = {
   },
   'W-12-315H': {
     title: 'W-12-315H | 12.8V 315Ah LiFePO4 Battery with Heater',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/07/1-1.jpg',
+    image: 'images/1-1.jpg',
     specs: [
       ['Model', 'W-12-315H'],
       ['Nominal Capacity', '315Ah / 4032Wh'],
@@ -377,7 +377,7 @@ const PRODUCTS = {
   },
   'W-24-100': {
     title: 'W-24-100 | 25.6V 100Ah LiFePO4 Battery',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/08/200-1-1-scaled.jpg',
+    image: 'images/200-1-1-scaled.jpg',
     specs: [
       ['Model', 'W-24-100'],
       ['Nominal Capacity', '100Ah / 2560Wh'],
@@ -406,7 +406,7 @@ const PRODUCTS = {
   },
   'W-36-100': {
     title: 'W-36-100 | 38.4V 100Ah LiFePO4 Battery',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/08/300-1-1-scaled.jpg',
+    image: 'images/300-1-1-scaled.jpg',
     specs: [
       ['Model', 'W-36-100'],
       ['Nominal Capacity', '100Ah / 3840Wh'],
@@ -435,7 +435,7 @@ const PRODUCTS = {
   },
   'O-12-1500W': {
     title: 'O-12-1500W | 1500W Off-Grid Pure Sine Wave Inverter',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/09/3.png',
+    image: 'images/3.png',
     specs: [
       ['Model', 'O-12-1500W'],
       ['Rated Power', '1500W'],
@@ -457,7 +457,7 @@ const PRODUCTS = {
   },
   'O-12-2000W': {
     title: 'O-12-2000W | 2000W Off-Grid Pure Sine Wave Inverter',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/09/2.png',
+    image: 'images/2.png',
     specs: [
       ['Model', 'O-12-2000W'],
       ['Rated Power', '2000W'],
@@ -479,7 +479,7 @@ const PRODUCTS = {
   },
   'O-12-2500W': {
     title: 'O-12-2500W | 2500W Off-Grid Pure Sine Wave Inverter',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/09/2.png',
+    image: 'images/2.png',
     specs: [
       ['Model', 'O-12-2500W'],
       ['Rated Power', '2500W'],
@@ -501,7 +501,7 @@ const PRODUCTS = {
   },
   'O-12-3000W': {
     title: 'O-12-3000W | 3000W Off-Grid Pure Sine Wave Inverter',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/09/1.png',
+    image: 'images/1.png',
     specs: [
       ['Model', 'O-12-3000W'],
       ['Rated Power', '3000W'],
@@ -523,7 +523,7 @@ const PRODUCTS = {
   },
   'H-12-3000W': {
     title: 'H-12-3000W | 3000W Hybrid Inverter with MPPT Solar Charger',
-    image: 'https://www.wattonenergy.com/wp-content/uploads/2025/09/1.png',
+    image: 'images/1.png',
     specs: [
       ['Model', 'H-12-3000W'],
       ['Rated Power', '3000W'],
