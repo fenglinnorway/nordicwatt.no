@@ -435,7 +435,7 @@ const PRODUCTS = {
   },
   'O-12-1500W': {
     title: 'O-12-1500W | 1500W Off-Grid Pure Sine Wave Inverter',
-    image: 'images/3.png',
+    image: 'images/1500W正.png',
     specs: [
       ['Model', 'O-12-1500W'],
       ['Rated Power', '1500W'],
@@ -457,7 +457,7 @@ const PRODUCTS = {
   },
   'O-12-2000W': {
     title: 'O-12-2000W | 2000W Off-Grid Pure Sine Wave Inverter',
-    image: 'images/2.png',
+    image: 'images/2000正.png',
     specs: [
       ['Model', 'O-12-2000W'],
       ['Rated Power', '2000W'],
@@ -479,7 +479,7 @@ const PRODUCTS = {
   },
   'O-12-2500W': {
     title: 'O-12-2500W | 2500W Off-Grid Pure Sine Wave Inverter',
-    image: 'images/2.png',
+    image: 'images/2500正.png',
     specs: [
       ['Model', 'O-12-2500W'],
       ['Rated Power', '2500W'],
@@ -501,7 +501,7 @@ const PRODUCTS = {
   },
   'O-12-3000W': {
     title: 'O-12-3000W | 3000W Off-Grid Pure Sine Wave Inverter',
-    image: 'images/1.png',
+    image: 'images/3000正.png',
     specs: [
       ['Model', 'O-12-3000W'],
       ['Rated Power', '3000W'],
@@ -523,7 +523,7 @@ const PRODUCTS = {
   },
   'H-12-3000W': {
     title: 'H-12-3000W | 3000W Hybrid Inverter with MPPT Solar Charger',
-    image: 'images/1.png',
+    image: 'images/混网逆变器.png',
     specs: [
       ['Model', 'H-12-3000W'],
       ['Rated Power', '3000W'],
@@ -548,4 +548,69 @@ const PRODUCTS = {
       ['Charging Modes', 'Grid, MPPT Solar, Hybrid'],
     ]
   },
-};
+};// ----- Product Carousel -----
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.product-image').forEach(container => {
+    const swiper = container.querySelector('.product-swiper');
+    if (!swiper) return;
+    
+    const slides = swiper.querySelectorAll('.swiper-slide');
+    const prevBtn = container.querySelector('.swiper-btn.prev');
+    const nextBtn = container.querySelector('.swiper-btn.next');
+    
+    if (slides.length <= 1) {
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+      return;
+    }
+    
+    let currentIndex = 0;
+    
+    // Create dot indicators
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'swiper-dots';
+    
+    for (let i = 0; i < slides.length; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'swiper-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
+        updateDots();
+      });
+      
+      dotsContainer.appendChild(dot);
+    }
+    
+    container.appendChild(dotsContainer);
+    
+    function updateCarousel() {
+      swiper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+    function updateDots() {
+      dotsContainer.querySelectorAll('.swiper-dot').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+    }
+    
+    // Arrow button controls
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+        updateDots();
+      });
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+        updateDots();
+      });
+    }
+  });
+});
