@@ -425,10 +425,22 @@ ul { list-style: none; }
   flex-direction: column;
 }
 
-.product-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+..product-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
   border-color: var(--gray-300);
+}
+
+.product-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+
+.product-card:hover .product-body {
+  transform: translateY(-8px);
 }
 
 .product-image {
@@ -436,13 +448,18 @@ ul { list-style: none; }
   overflow: hidden;
   background: var(--gray-100);
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.4s ease;
+  padding: 10px;
+  background: white;
 }
 
 .product-card:hover .product-image img {
@@ -966,6 +983,9 @@ ul { list-style: none; }
   transition: var(--transition);
   cursor: pointer;
   border-radius: 0 0 0 8px;
+  overflow: hidden;
+  padding: 0 10px;
+  white-space: nowrap;
 }
 
 .sidebar-btn:first-child {
@@ -976,9 +996,21 @@ ul { list-style: none; }
   border-radius: 0 0 0 8px;
 }
 
+.sidebar-btn .sidebar-text {
+  display: none;
+  font-size: 0.75rem;
+  margin-left: 8px;
+  line-height: 1.1;
+}
+
 .sidebar-btn:hover {
   background: var(--accent);
-  width: 56px;
+  width: 260px;
+  justify-content: flex-start;
+}
+
+.sidebar-btn:hover .sidebar-text {
+  display: inline;
 }
 
 /* ==============================
@@ -1285,18 +1317,26 @@ ul { list-style: none; }
 }
 
 .modal-image {
-  aspect-ratio: 16/9;
   border-radius: var(--radius);
   overflow: hidden;
   margin-bottom: 24px;
   background: var(--gray-100);
+  width: 100%;
+  max-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 50vh;
+  object-fit: contain;
+  display: block;
 }
+
 
 .spec-table {
   width: 100%;
@@ -1373,7 +1413,115 @@ ul { list-style: none; }
   white-space: nowrap;
   box-shadow: var(--shadow-lg);
 }
+/* ==============================
+   轮播图样式 - 统一定义
+   ============================== */
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-swiper {
+  display: flex;
+  transition: transform 0.4s ease;
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: white;
+  padding: 10px;
+}
+
+/* 轮播图按钮 */
+.swiper-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.product-image:hover .swiper-btn {
+  opacity: 1;
+}
+
+.swiper-btn:hover {
+  background: rgba(76, 175, 130, 0.85);
+  transform: translateY(-50%) scale(1.15);
+}
+
+.swiper-btn.prev {
+  left: 12px;
+}
+
+.swiper-btn.next {
+  right: 12px;
+}
 
 .toast.show {
   transform: translateX(-50%) translateY(0);
+}
+
+/* 轮播图小圆点指示器 */
+.swiper-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 20;
+}
+
+.swiper-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.swiper-dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.swiper-dot.active {
+  background: rgba(255, 255, 255, 1);
+  width: 24px;
+  border-radius: 4px;
 }
