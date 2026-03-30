@@ -89,21 +89,8 @@ document.querySelectorAll('[data-product]').forEach(btn => {
 });
 
 // ----- Contact Form -----
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('.form-submit');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    setTimeout(() => {
-      showToast('✓ Message sent! We\'ll get back to you soon.');
-      contactForm.reset();
-      btn.textContent = 'Send Message';
-      btn.disabled = false;
-    }, 1200);
-  });
-}
+// Form now submits to uniweb.email for actual email sending
+// Removed simulated submission
 
 // ----- Toast -----
 function showToast(msg) {
@@ -164,7 +151,7 @@ const PRODUCTS = {
       ['IP Rating', 'IP67'],
       ['Case Material', 'ABS'],
       ['Terminal', 'M8'],
-      ['Application', '4S4P'],
+      ['Connection', '4S4P'],
       ['Operating Temp (Charge)', '0°C to 55°C'],
       ['Operating Temp (Discharge)', '-20°C to 60°C'],
       ['Storage Temperature', '-5°C to 35°C'],
@@ -173,7 +160,7 @@ const PRODUCTS = {
     ]
   },
   'W-12-100mini': {
-    title: 'W-12-100 Mini | 12.8V 100Ah Compact LiFePO4 Battery',
+    title: 'W-12-100 Mini | 12.8V 100Ah Mini LiFePO4 Battery',
     image: 'images/100-5-1.jpg',
     specs: [
       ['Model', 'W-12-100 Mini'],
@@ -193,7 +180,7 @@ const PRODUCTS = {
       ['IP Rating', 'IP67'],
       ['Case Material', 'ABS'],
       ['Terminal', 'M8'],
-      ['Application', '4S4P'],
+      ['Connection', '4S4P'],
       ['Operating Temp (Charge)', '0°C to 55°C'],
       ['Operating Temp (Discharge)', '-20°C to 60°C'],
       ['Storage Temperature', '-5°C to 35°C'],
@@ -222,7 +209,7 @@ const PRODUCTS = {
       ['IP Rating', 'IP67'],
       ['Case Material', 'ABS'],
       ['Terminal', 'M8'],
-      ['Application', '4S4P'],
+      ['Connection', '4S4P'],
       ['Operating Temp (Charge)', '0°C to 55°C'],
       ['Operating Temp (Discharge)', '-20°C to 60°C'],
       ['Storage Temperature', '-5°C to 35°C'],
@@ -251,7 +238,7 @@ const PRODUCTS = {
       ['IP Rating', 'IP67'],
       ['Case Material', 'ABS'],
       ['Terminal', 'M8'],
-      ['Application', '4S4P'],
+      ['Connection', '4S4P'],
       ['Operating Temp (Charge)', '0°C to 55°C'],
       ['Operating Temp (Discharge)', '-20°C to 60°C'],
       ['Storage Temperature', '-5°C to 35°C'],
@@ -280,7 +267,7 @@ const PRODUCTS = {
       ['IP Rating', 'IP67'],
       ['Case Material', 'ABS'],
       ['Terminal', 'M8'],
-      ['Application', '4S4P'],
+      ['Connection', '4S4P'],
       ['Operating Temp (Charge)', '-10°C to 55°C'],
       ['Operating Temp (Discharge)', '-25°C to 55°C'],
       ['Storage Temperature', '-20°C to 45°C'],
@@ -309,7 +296,7 @@ const PRODUCTS = {
       ['IP Rating', 'IP67'],
       ['Case Material', 'ABS'],
       ['Terminal', 'M8'],
-      ['Application', '4S4P'],
+      ['Connection', '4S4P'],
       ['Operating Temp (Charge)', '0°C to 55°C'],
       ['Operating Temp (Discharge)', '-20°C to 60°C'],
       ['Storage Temperature', '-5°C to 35°C'],
@@ -338,7 +325,7 @@ const PRODUCTS = {
       ['IP Rating', 'IP67'],
       ['Case Material', 'ABS'],
       ['Terminal', 'M8'],
-      ['Application', '4S4P'],
+      ['Connection', '4S4P'],
       ['Operating Temp (Charge)', '0°C to 55°C'],
       ['Operating Temp (Discharge)', '-20°C to 60°C'],
       ['Storage Temperature', '-5°C to 35°C'],
@@ -367,7 +354,7 @@ const PRODUCTS = {
       ['IP Rating', 'IP67'],
       ['Case Material', 'Metal'],
       ['Terminal', 'M8'],
-      ['Application', 'Parallel only, max 4P'],
+      ['Connection', 'Parallel only, max 4P'],
       ['Operating Temp (Charge)', '0°C to 55°C'],
       ['Operating Temp (Discharge)', '-20°C to 60°C'],
       ['Storage Temperature', '-5°C to 35°C'],
@@ -396,7 +383,7 @@ const PRODUCTS = {
       ['IP Rating', 'IP67'],
       ['Case Material', 'ABS'],
       ['Terminal', 'M8'],
-      ['Application', '2S4P'],
+      ['Connection', '2S4P'],
       ['Operating Temp (Charge)', '0°C to 55°C'],
       ['Operating Temp (Discharge)', '-20°C to 60°C'],
       ['Storage Temperature', '-5°C to 35°C'],
@@ -425,7 +412,7 @@ const PRODUCTS = {
       ['IP Rating', 'IP67'],
       ['Case Material', 'ABS'],
       ['Terminal', 'M8'],
-      ['Application', 'Parallel only, max 2P'],
+      ['Connection', 'Parallel only, max 2P'],
       ['Operating Temp (Charge)', '0°C to 55°C'],
       ['Operating Temp (Discharge)', '-20°C to 60°C'],
       ['Storage Temperature', '-5°C to 35°C'],
@@ -451,7 +438,7 @@ const PRODUCTS = {
       ['Dimensions (L×W×H)', '340 × 233 × 96 mm'],
       ['Weight', '2.92 kg'],
       ['Battery Type', 'LiFePO4 & Lead-Acid'],
-      ['Display', 'LCD'],
+      ['Accessory', 'External LCD Display'],
       ['Protection', 'Over-voltage, over-current, over-temp, short-circuit'],
     ]
   },
@@ -473,7 +460,7 @@ const PRODUCTS = {
       ['Dimensions (L×W×H)', '380 × 233 × 96 mm'],
       ['Weight', '3.4 kg'],
       ['Battery Type', 'LiFePO4 & Lead-Acid'],
-      ['Display', 'LCD'],
+      ['Accessory', 'External LCD Display'],
       ['Protection', 'Over-voltage, over-current, over-temp, short-circuit'],
     ]
   },
@@ -495,7 +482,7 @@ const PRODUCTS = {
       ['Dimensions (L×W×H)', '374 × 268 × 105 mm'],
       ['Weight', '4.5 kg'],
       ['Battery Type', 'LiFePO4 & Lead-Acid'],
-      ['Display', 'LCD'],
+      ['Accessory', 'External LCD Display'],
       ['Protection', 'Over-voltage, over-current, over-temp, short-circuit'],
     ]
   },
@@ -517,7 +504,7 @@ const PRODUCTS = {
       ['Dimensions (L×W×H)', '474 × 268 × 105 mm'],
       ['Weight', '5.9 kg'],
       ['Battery Type', 'LiFePO4 & Lead-Acid'],
-      ['Display', 'LCD'],
+      ['Accessory', 'External LCD Display'],
       ['Protection', 'Over-voltage, over-current, over-temp, short-circuit'],
     ]
   },
